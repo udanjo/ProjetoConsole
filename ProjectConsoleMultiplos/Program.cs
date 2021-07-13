@@ -8,12 +8,17 @@ namespace ProjectConsoleMultiplos
         private static void Main()
         {
             IList<int> list = new List<int>();
-            for (int i = 1; i <= 100; i++)
+            int count = 1;
+
+            while (count <= 100)
             {
-                if ((i % 3) == 0) list.Add(i);
+                if ((count % 3) == 0)
+                    list.Add(count);
+
+                count++;
             }
 
-            var values = string.Join(",", list);
+            string values = string.Join(",", list);
             Console.WriteLine("Os números múltiplos de 3 de 1 a 100, são:");
             Console.WriteLine(values);
             Console.ReadLine();
