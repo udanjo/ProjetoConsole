@@ -7,6 +7,10 @@ namespace ProjectConsoleAluno
         static void Main()
         {
             
+            Console.WriteLine("Informe a quantidade de alunos que deseja inserir as notas:");
+            _ = int.TryParse(Console.ReadLine(), out int count);
+
+
         }
     }
 }

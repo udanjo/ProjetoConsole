@@ -1,43 +1,29 @@
-﻿using System;
+﻿using ProjectConsoleSalario.Service;
+using System;
 
 namespace ProjectConsoleSalario
 {
     public static class Program
     {
-        static void Main()
+        private static void Main()
         {
-            Console.WriteLine("Hello World!");
-            string nome = "", nomeMaior = "", nomeMenor = "";
-            decimal salario = 0, salarioMaior = 0, salarioMenor = 0;
-            do
+            EmployeeService service = new();
+
+            Console.WriteLine("Quantos funcionários você deseja inserir ?");
+            _ = int.TryParse(Console.ReadLine(), out int count);
+
+            Console.WriteLine("\n");
+            for (int i = 1; i <= count; i++)
             {
-                Console.WriteLine("Informe o nome:");
-                nome = Console.ReadLine();
+                service.AddEmployee();
+            }
 
-                if(!string.Equals(nome, "Parar", StringComparison.CurrentCultureIgnoreCase))
-                {
-                    Console.WriteLine("Informe o salário:");
-                    var result = Console.ReadLine();
-                    salario = decimal.Parse(result);
+            service.CalculateLowestSalary();
+            service.CalculateHighestSalary();
 
-                    if (salario > salarioMaior)
-                    {
-                        nomeMaior = nome;
-                        salarioMaior = salario;
-                    }
-
-                    if(salario < salarioMenor)
-                    {
-                        nomeMenor = nome;
-                        salarioMenor = salario;
-                    }
-                }
-
-            } while (!string.Equals(nome, "Parar", StringComparison.CurrentCultureIgnoreCase));
-
-            Console.WriteLine($"O Maior salário é de {nomeMaior} com Valor {salarioMaior}");
+            Console.WriteLine($"O Maior salário é de {service._highestEmployee.Name} com Valor {service._highestEmployee.Salary}");
             Console.WriteLine("");
-            Console.WriteLine($"O Menor salário é de {nomeMenor} com Valor {salarioMenor}");
+            Console.WriteLine($"O Menor salário é de {service._lowestEmployee.Name} com Valor {service._lowestEmployee.Salary}");
             Console.ReadKey();
         }
     }
