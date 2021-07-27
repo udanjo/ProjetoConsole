@@ -1,8 +1,8 @@
 ﻿namespace ProjectConsoleAluno.Model
 {
-    public record Student
+    public record Aluno
     {
-        public Student(string name, int note)
+        public Aluno(string name, double note)
         {
             Name = name;
             Note = note;
@@ -10,6 +10,6 @@
 
         public string Name { get; private set; }
 
-        public int Note { get; private set; }
+        public double Note { get; private set; }
     }
 }

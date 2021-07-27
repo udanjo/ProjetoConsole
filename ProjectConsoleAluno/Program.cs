@@ -1,16 +1,26 @@
-﻿using System;
+﻿using ProjectConsoleAluno.Service;
+using System;
 
 namespace ProjectConsoleAluno
 {
     public static class Program
     {
-        static void Main()
+        private static void Main()
         {
-            
-            Console.WriteLine("Informe a quantidade de alunos que deseja inserir as notas:");
-            _ = int.TryParse(Console.ReadLine(), out int count);
+            StudentService service = new();
+            int count;
+            do
+            {
+                Console.WriteLine("Informe a quantidade de alunos que deseja inserir as notas:");
+            } while (!int.TryParse(Console.ReadLine(), out count));
 
+            for (int i = 1; i <= count; i++)
+            {
+                service.AddStudent();
+            }
 
+            service.StudentsWithAverageThanSeven();
+            Console.ReadKey();
         }
     }
 }
