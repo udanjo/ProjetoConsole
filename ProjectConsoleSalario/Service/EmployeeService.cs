@@ -21,8 +21,11 @@ namespace ProjectConsoleSalario.Service
             Console.WriteLine("Informe o nome do funcionário: ");
             var name = Console.ReadLine();
 
-            Console.WriteLine("Informe o salário: ");
-            _ = decimal.TryParse(Console.ReadLine(), out decimal salary);
+            decimal salary;
+            do
+            {
+                Console.WriteLine("Informe o salário: ");
+            } while (!decimal.TryParse(Console.ReadLine(), out salary));
 
             Console.WriteLine("");
 
@@ -49,6 +52,7 @@ namespace ProjectConsoleSalario.Service
         {
             decimal highest = _employees.FirstOrDefault().Salary;
             string name = _employees.FirstOrDefault().Name;
+
             for (int i = 0; i < _employees.Count; i++)
             {
                 if (_employees[i].Salary > highest)

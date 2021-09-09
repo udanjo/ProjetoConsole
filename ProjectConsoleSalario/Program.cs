@@ -9,8 +9,11 @@ namespace ProjectConsoleSalario
         {
             EmployeeService service = new();
 
-            Console.WriteLine("Quantos funcionários você deseja inserir ?");
-            _ = int.TryParse(Console.ReadLine(), out int count);
+            int count;
+            do
+            {
+                Console.WriteLine("Quantos funcionários você deseja inserir ?");
+            } while (!int.TryParse(Console.ReadLine(), out count));
 
             Console.WriteLine("\n");
             for (int i = 1; i <= count; i++)
@@ -21,9 +24,11 @@ namespace ProjectConsoleSalario
             service.CalculateLowestSalary();
             service.CalculateHighestSalary();
 
-            Console.WriteLine($"O Maior salário é de {service._highestEmployee.Name} com Valor {service._highestEmployee.Salary}");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"O Maior salário é do funcionário: {service._highestEmployee.Name} com Valor {service._highestEmployee.Salary}");
             Console.WriteLine("");
-            Console.WriteLine($"O Menor salário é de {service._lowestEmployee.Name} com Valor {service._lowestEmployee.Salary}");
+            Console.WriteLine($"O Menor salário é do funcionário: {service._lowestEmployee.Name} com Valor {service._lowestEmployee.Salary}");
+            Console.ForegroundColor = ConsoleColor.White;
             Console.ReadKey();
         }
     }

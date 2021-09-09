@@ -20,27 +20,27 @@ namespace ProjectConsoleValores.Service
                 switch (option)
                 {
                     case "1":
-                        Console.WriteLine($"Somatória dos valores: {valueA + valueB}");
+                        PrintMessage($"Somatória dos valores: {valueA + valueB}");
                         break;
 
                     case "2":
-                        Console.WriteLine($"Subtração dos valores: {valueA - valueB}");
+                        PrintMessage($"Subtração dos valores: {valueA - valueB}");
                         break;
 
                     case "3":
                         var message = valueA == 0
                                  ? "Não é possível dividir por zero"
                                  : $"Divisão dos valores: {valueB / valueA}";
-                        Console.WriteLine(message);
+                        PrintMessage(message);
                         break;
 
                     case "4":
-                        Console.WriteLine($"Multiplicação dos Valores: {valueA * valueB}");
+                        PrintMessage($"Multiplicação dos Valores: {valueA * valueB}");
                         break;
 
                     case "5":
-                        Console.WriteLine(VerifyEvenOrOdd(valueA));
-                        Console.WriteLine(VerifyEvenOrOdd(valueB));
+                        PrintMessage(VerifyEvenOrOdd(valueA));
+                        PrintMessage(VerifyEvenOrOdd(valueB));
                         break;
 
                     case "6":
@@ -48,6 +48,7 @@ namespace ProjectConsoleValores.Service
                         break;
 
                     case "9":
+                        Console.WriteLine("Pressione enter pra finalizar...");
                         Console.ReadLine();
                         break;
 
@@ -61,13 +62,15 @@ namespace ProjectConsoleValores.Service
 
         private void EnterValues()
         {
-            Console.WriteLine("Informe um numero para calculos:");
-            string valueNumA = Console.ReadLine();
-            Console.WriteLine("Informe outro numero:");
-            string valueNumB = Console.ReadLine();
+            do
+            {
+                Console.WriteLine("Informe um numero para calculos");
+            } while (!int.TryParse(Console.ReadLine(), out valueA));
 
-            _ = int.TryParse(valueNumA, out valueA);
-            _ = int.TryParse(valueNumB, out valueB);
+            do
+            {
+                Console.WriteLine("Informe outro numero:");
+            } while (!int.TryParse(Console.ReadLine(), out valueB));
         }
 
         public string PrintMenu()
@@ -91,6 +94,13 @@ namespace ProjectConsoleValores.Service
             Console.WriteLine();
             Console.WriteLine("Digite sua opção: ");
             return Console.ReadLine();
+        }
+
+        public void PrintMessage(string message)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"--> {message}");
+            Console.ForegroundColor = ConsoleColor.White;
         }
 
         private string VerifyEvenOrOdd(int value)
