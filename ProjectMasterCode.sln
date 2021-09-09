@@ -23,6 +23,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProjectConsole5", "ProjectC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectConsoleBhaskara", "ProjectConsoleBhaskara\ProjectConsoleBhaskara.csproj", "{50B9B0EA-CDBE-46FC-94F7-FE61C0A1D420}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProjectConsole6", "ProjectConsole6", "{9CA81FE7-3DF1-4058-B145-943D4F887553}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectConsoleREFOUT", "ProjectConsoleREFOUT\ProjectConsoleREFOUT.csproj", "{FDAA095C-3C68-4EA6-953B-B6E27C28A95C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +53,10 @@ Global
 		{50B9B0EA-CDBE-46FC-94F7-FE61C0A1D420}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50B9B0EA-CDBE-46FC-94F7-FE61C0A1D420}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50B9B0EA-CDBE-46FC-94F7-FE61C0A1D420}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDAA095C-3C68-4EA6-953B-B6E27C28A95C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDAA095C-3C68-4EA6-953B-B6E27C28A95C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDAA095C-3C68-4EA6-953B-B6E27C28A95C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDAA095C-3C68-4EA6-953B-B6E27C28A95C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +67,7 @@ Global
 		{778F6260-85C2-468B-A2EB-9376C2A6B10A} = {70697183-F435-454D-BC58-BE6929158987}
 		{57011044-D33D-417A-9BD0-F668BBC9461C} = {EF60B93B-D83F-44B7-A6A2-B043ACD95865}
 		{50B9B0EA-CDBE-46FC-94F7-FE61C0A1D420} = {DD28A631-6F13-4634-9648-B485F0E37748}
+		{FDAA095C-3C68-4EA6-953B-B6E27C28A95C} = {9CA81FE7-3DF1-4058-B145-943D4F887553}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B97F50FA-3740-4510-9872-2881380D5E5B}
