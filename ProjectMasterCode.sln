@@ -35,6 +35,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProjectConsole8", "ProjectC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectConsoleOrdem", "ProjectConsoleOrdem\ProjectConsoleOrdem.csproj", "{22627118-69DF-4E95-9801-702897C4A54E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProjectConsole9", "ProjectConsole9", "{AE069FCE-7D28-44F7-9DC5-9DA6C35C1553}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectConsoleLinq", "ProjectConsoleLinq\ProjectConsoleLinq.csproj", "{1844A551-0636-4D6E-951A-D0148695E813}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +77,10 @@ Global
 		{22627118-69DF-4E95-9801-702897C4A54E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22627118-69DF-4E95-9801-702897C4A54E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22627118-69DF-4E95-9801-702897C4A54E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1844A551-0636-4D6E-951A-D0148695E813}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1844A551-0636-4D6E-951A-D0148695E813}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1844A551-0636-4D6E-951A-D0148695E813}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1844A551-0636-4D6E-951A-D0148695E813}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,6 +94,7 @@ Global
 		{FDAA095C-3C68-4EA6-953B-B6E27C28A95C} = {9CA81FE7-3DF1-4058-B145-943D4F887553}
 		{EAFCA0EB-46C5-482E-A87C-2CD0253488B6} = {480605B4-A70D-4E41-9C99-20470BFA6394}
 		{22627118-69DF-4E95-9801-702897C4A54E} = {D7D7BA88-5CF7-4BD9-8864-596343084589}
+		{1844A551-0636-4D6E-951A-D0148695E813} = {AE069FCE-7D28-44F7-9DC5-9DA6C35C1553}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B97F50FA-3740-4510-9872-2881380D5E5B}

@@ -8,8 +8,9 @@ namespace ProjectConsoleOrdem
     {
         private static void Main()
         {
-            IList<int> lstNumber = new List<int>();
-            int count, value;
+            IList<decimal> lstNumber = new List<decimal>();
+            int count; 
+            decimal value;
 
             do
                 Console.WriteLine("Qual a quantidade de valores que deseja informar: ");
@@ -19,7 +20,7 @@ namespace ProjectConsoleOrdem
             {
                 do
                     Console.WriteLine("\nDigite o numero:");
-                while (!int.TryParse(Console.ReadLine(), out value));
+                while (!decimal.TryParse(Console.ReadLine(), out value));
 
                 lstNumber.Add(value);
             }
@@ -28,8 +29,8 @@ namespace ProjectConsoleOrdem
             var descOrder = lstNumber.OrderByDescending(x => x).ToList();
 
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"\nValor com ordenação crescente = {string.Join(",", ascOrder)}");
-            Console.WriteLine($"Valor com ordenação decrescente = {string.Join(",", descOrder)}");
+            Console.WriteLine($"\nValor com ordenação crescente = {string.Join(" - ", ascOrder)}");
+            Console.WriteLine($"Valor com ordenação decrescente = {string.Join(" - ", descOrder)}");
             Console.ForegroundColor = ConsoleColor.White;
             Console.ReadKey();
         }
