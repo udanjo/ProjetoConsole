@@ -43,6 +43,6 @@ namespace ProjectConsoleAluno.Service
             Console.ForegroundColor = ConsoleColor.White;
         }
 
-        public static bool ValidNote(double grade) => grade >= 0 && grade <= 10;
+        public  bool ValidNote(double grade) => grade >= 0 && grade <= 10;
     }
 }

@@ -2,7 +2,7 @@
 
 namespace ProjectConsoleNumerosPares
 {
-    public class Program
+    public static class Program
     {
         private const int _countNumber = 4;
 

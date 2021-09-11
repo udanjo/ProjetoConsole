@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectConsoleLinq.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -6,7 +7,7 @@ namespace ProjectConsoleLinq
 {
     public static class Program
     {
-        static void Main()
+        public static void Main()
         {
             //Crie uma lista que receba inteiros. -- OK
             //Imprimir todos os números da lista. -- OK
@@ -22,43 +23,37 @@ namespace ProjectConsoleLinq
             //Retorne apenas o número informado.
             //Transforme todos os números da lista em um Array.
 
+            GetLinqService service = new();
 
-            IList<int> lstNumber = new List<int>();
-            int count, value;
+            int count;
             do
                 Console.WriteLine("Qual a quantidade de valores que deseja informar: ");
             while (!int.TryParse(Console.ReadLine(), out count));
 
-            for (int i = 1; i <= count; i++)
-            {
-                do
-                    Console.WriteLine("\nDigite o numero:");
-                while (!int.TryParse(Console.ReadLine(), out value));
-
-                lstNumber.Add(value);
-            }
-
-            var ascOrder = lstNumber.OrderBy(x => x).ToList();
-            var descOrder = lstNumber.OrderByDescending(x => x).ToList();
-            var firstOrder = lstNumber.FirstOrDefault();
-            var lastOrder = lstNumber.LastOrDefault();
-            lstNumber.Add(99);
-            var insertAtStart = lstNumber;
+            service.GetListNumber(count);
 
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"\nValor são = {string.Join(" - ", lstNumber)}");
-            Console.WriteLine($"Valor com ordenação crescente = {string.Join(" - ", ascOrder)}");
-            Console.WriteLine($"Valor com ordenação decrescente = {string.Join(" - ", descOrder)}");
-            Console.WriteLine($"Valor com apenas o primeiro número = {string.Join(" - ", firstOrder)}");
-            Console.WriteLine($"Valor com apenas o ultimo número = {string.Join(" - ", lastOrder)}");
-            Console.WriteLine($"Valor com o Numero 99 inserido = {string.Join(" - ", lstNumber)}");
+
+            service.ListComplete();
+            service.ListAscOrder();
+            service.ListDescOrder();
+
+            //Console.WriteLine($"Valores com ordenação crescente = {lstNumber.ListAscOrder()}");
+            //Console.WriteLine($"Valores com ordenação decrescente = {lstNumber.ListDescOrder()}");
+            //Console.WriteLine($"Valores com apenas o primeiro número = {lstNumber.ListFirstOrder()}");
+            //Console.WriteLine($"Valores com apenas o último número = {lstNumber.ListLastOrder()}");
+            //Console.WriteLine($"Valores com o número 99 inserido no inicio = {lstNumber.ListInsertAtFirst()}");
+            //Console.WriteLine($"Valores com o número 98 inserido no final  = {lstNumber.ListInsertAtLast()}");
+            //Console.WriteLine($"Valores com o primeiro removido = {lstNumber.ListRemoveAtFirst()}");
+            //Console.WriteLine($"Valores com o último removido  = {lstNumber.ListRemoveAtLast()}");
+            //Console.WriteLine($"Valores com apenas os números pares  = {lstNumber.ListNumberPairs()}");
+            //Console.WriteLine($"Valores apenas o número informado  = {lstNumber.ListNumber()}");
+            //Console.WriteLine($"Transforme todos os números da lista em um Array  = {lstNumber.ListNumber()}");
+
             Console.ForegroundColor = ConsoleColor.White;
             Console.ReadKey();
         }
 
-        //private void Calc()
-        //{
 
-        //}
     }
 }

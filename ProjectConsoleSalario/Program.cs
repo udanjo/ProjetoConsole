@@ -25,9 +25,8 @@ namespace ProjectConsoleSalario
             service.CalculateHighestSalary();
 
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"O Maior salário é do funcionário: {service._highestEmployee.Name} com Valor {service._highestEmployee.Salary}");
-            Console.WriteLine("");
-            Console.WriteLine($"O Menor salário é do funcionário: {service._lowestEmployee.Name} com Valor {service._lowestEmployee.Salary}");
+            Console.WriteLine($"\nO Maior salário é do funcionário: {service._highestEmployee.Name} com Valor {service._highestEmployee.Salary}");
+            Console.WriteLine($"\nO Menor salário é do funcionário: {service._lowestEmployee.Name} com Valor {service._lowestEmployee.Salary}");
             Console.ForegroundColor = ConsoleColor.White;
             Console.ReadKey();
         }

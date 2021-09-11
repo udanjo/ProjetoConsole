@@ -1,6 +1,6 @@
-﻿using System;
+﻿using ProjectConsoleOrdem.Services;
+using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace ProjectConsoleOrdem
 {
@@ -9,7 +9,7 @@ namespace ProjectConsoleOrdem
         private static void Main()
         {
             IList<decimal> lstNumber = new List<decimal>();
-            int count; 
+            int count;
             decimal value;
 
             do
@@ -25,13 +25,9 @@ namespace ProjectConsoleOrdem
                 lstNumber.Add(value);
             }
 
-            var ascOrder = lstNumber.OrderBy(x => x).ToList();
-            var descOrder = lstNumber.OrderByDescending(x => x).ToList();
-
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"\nValor com ordenação crescente = {string.Join(" - ", ascOrder)}");
-            Console.WriteLine($"Valor com ordenação decrescente = {string.Join(" - ", descOrder)}");
-            Console.ForegroundColor = ConsoleColor.White;
+            CalculateOrderService calculate = new();
+            calculate.AscendingOrder(lstNumber);
+            calculate.DescendingOrder(lstNumber);
             Console.ReadKey();
         }
     }

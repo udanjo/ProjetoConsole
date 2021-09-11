@@ -5,7 +5,7 @@ namespace ProjectConsoleMultiplos
 {
     public static class Program
     {
-        private static void Main()
+        public static void Main()
         {
             IList<int> list = new List<int>();
             int count = 1;
