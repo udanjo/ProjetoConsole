@@ -6,7 +6,7 @@ namespace ProjectConsoleLinq.Services
 {
     public class GetLinqService
     {
-        private IList<int> lstNumber = null;
+        private readonly IList<int> lstNumber = null;
 
         public GetLinqService()
         {
@@ -18,10 +18,7 @@ namespace ProjectConsoleLinq.Services
             int value;
             for (int i = 1; i <= count; i++)
             {
-                do
-                    Console.WriteLine("\nDigite o numero:");
-                while (!int.TryParse(Console.ReadLine(), out value));
-
+                value = GetNumber();
                 lstNumber.Add(value);
             }
         }
@@ -38,13 +35,15 @@ namespace ProjectConsoleLinq.Services
 
         public void ListInsertatFirst()
         {
-            lstNumber.Insert(0, GetNumber());
+            var number = GetNumber("Informe um numero para inserir no inicio");
+            lstNumber.Insert(0, number);
             Console.WriteLine($"Valores com o número inserido no inicio = {string.Join(" - ", lstNumber)}");
         }
 
         public void ListInsertAtLast()
         {
-            lstNumber.Add(GetNumber());
+            var number = GetNumber("Informe um numero para inserir no inicio");
+            lstNumber.Add(number);
             Console.WriteLine($"Valores com o número inserido no final  = {string.Join(" - ", lstNumber)}");
         }
 
@@ -56,7 +55,7 @@ namespace ProjectConsoleLinq.Services
 
         public void ListRemoveAtLast()
         {
-            lstNumber.RemoveAt(lstNumber.Count);
+            lstNumber.RemoveAt(lstNumber.Count - 1);
             Console.WriteLine($"Valores com o último removido  = {string.Join(" - ", lstNumber)}");
         }
 
@@ -66,19 +65,28 @@ namespace ProjectConsoleLinq.Services
             Console.WriteLine($"Valores com apenas os números pares  = {string.Join(" - ", newlist)}");
         }
 
-        //private  string ListNumber(this IList<int> ls) => ls[0].ToString() + " - " + ls[ls.Count - 1].ToString();
+        public void ListSearchNumber()
+        {
+            int value = GetNumber("Informe um numero para consultar: ");
+            var list = lstNumber.Where(x => x == value).ToList();
+            if (list.Count > 0)
+                Console.WriteLine($"Valores consultado encontrado é = {string.Join(" - ", list)}");
+            else
+                Console.WriteLine("Não foi encontrado esse valor na list");
+        }
 
-        public void ListToArray() => 
+        public void ListToArray() =>
             Console.WriteLine($"Transforme todos os números da lista em um Array  = {string.Join(" - ", lstNumber.ToArray())}");
 
-
-        private int GetNumber()
+        private int GetNumber(string message = "Digite o numero para inserir:")
         {
             int value;
+            Console.ForegroundColor = ConsoleColor.White;
             do
-                Console.WriteLine("\nDigite o numero para inserir:");
+                Console.WriteLine("\n" + message);
             while (!int.TryParse(Console.ReadLine(), out value));
 
+            Console.ForegroundColor = ConsoleColor.Green;
             return value;
         }
     }
